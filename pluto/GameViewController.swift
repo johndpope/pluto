@@ -10,21 +10,66 @@ import UIKit
 import QuartzCore
 import SceneKit
 
+
+class JupiterNode: SCNNode {
+
+    required override init() {
+        super.init()
+        geometry = SCNSphere(radius: 1)
+        geometry!.firstMaterial?.diffuse.contents = UIImage(named: "jupiter")
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class SaturnNode: SCNNode {
+    
+    required override init() {
+        super.init()
+        geometry = SCNSphere(radius: 1)
+        geometry!.firstMaterial?.diffuse.contents = UIImage(named: "saturn")
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+
+
 class GameViewController: UIViewController {
 
+    let cameraNode:SCNNode
+    let jupiterNode:JupiterNode
+    let saturnNode:SaturnNode
+    let scene:SCNScene
+    
+    var rotateAction:SCNAction?
+    
+    required init(coder aDecoder: NSCoder) {
+        cameraNode = SCNNode()
+        cameraNode.camera = SCNCamera()
+        cameraNode.camera?.focalDistance = 1
+        print(cameraNode.camera)
+        jupiterNode = JupiterNode()
+        saturnNode = SaturnNode()
+        scene = SCNScene()
+        super.init(coder:aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.dae")!
-        
-        // create and add a camera to the scene
-        let cameraNode = SCNNode()
-        cameraNode.camera = SCNCamera()
+        // add a camera to the scene
         scene.rootNode.addChildNode(cameraNode)
+        //  Right, Left, Top, Bottom, Back, Front.
+        scene.background.contents = ["sky_right", "sky_left", "sky_top", "sky_bottom", "sky_back", "sky_front"]
         
         // place the camera
-        cameraNode.position = SCNVector3(x: 0, y: 0, z: 15)
+        cameraNode.position = SCNVector3(x: 0, y: 0, z: 4)
+
         
         // create and add a light to the scene
         let lightNode = SCNNode()
@@ -41,10 +86,17 @@ class GameViewController: UIViewController {
         scene.rootNode.addChildNode(ambientLightNode)
         
         // retrieve the ship node
-        let ship = scene.rootNode.childNodeWithName("ship", recursively: true)!
+        
+        scene.rootNode.addChildNode(jupiterNode)
+        scene.rootNode.addChildNode(saturnNode)
+        
+        jupiterNode.position = SCNVector3()
+        saturnNode.position = SCNVector3(x: 0, y: 0, z: 70)
         
         // animate the 3d object
-        ship.runAction(SCNAction.repeatActionForever(SCNAction.rotateByX(0, y: 2, z: 0, duration: 1)))
+        rotateAction = SCNAction.repeatActionForever(SCNAction.rotateByX(0, y: 1, z: 0, duration: 10))
+        jupiterNode.runAction(rotateAction!, forKey: "rotate")
+        saturnNode.runAction(rotateAction!, forKey: "rotate")
         
         // retrieve the SCNView
         let scnView = self.view as! SCNView
@@ -56,7 +108,7 @@ class GameViewController: UIViewController {
         scnView.allowsCameraControl = true
         
         // show statistics such as fps and timing information
-        scnView.showsStatistics = true
+        scnView.showsStatistics = false
         
         // configure the view
         scnView.backgroundColor = UIColor.blackColor()
@@ -69,6 +121,47 @@ class GameViewController: UIViewController {
             gestureRecognizers.extend(existingGestureRecognizers)
         }
         scnView.gestureRecognizers = gestureRecognizers
+
+//        let zoomPan = UIPanGestureRecognizer(target: self, action: "handlePan:")
+//        scnView.addGestureRecognizer(zoomPan)
+
+    }
+    
+    func addLightToSceneAt(postion:SCNVector3) {
+        
+        let lightNode = SCNNode()
+        lightNode.light = SCNLight()
+        lightNode.light!.type = SCNLightTypeOmni
+        lightNode.position = postion
+        scene.rootNode.addChildNode(lightNode)
+    }
+    
+    func handlePan(gesture: UIPanGestureRecognizer) {
+        let point = gesture.velocityInView(view!)
+        
+        let zoomThreshold:CGFloat = 1000
+        
+        print(zoomThreshold, point.y, "\n")
+        
+        if(point.y > zoomThreshold){
+            cameraNode.runAction(SCNAction.moveTo(SCNVector3(x: 0, y: 0, z: 4), duration: 0.8))
+            //let mat = jupiterNode.geometry!.firstMaterial!
+            SCNTransaction.begin()
+            SCNTransaction.setAnimationDuration(1)
+            jupiterNode.opacity = 1;
+            SCNTransaction.commit()
+        } else if(point.y < -1 * zoomThreshold){
+            cameraNode.runAction(SCNAction.moveTo(SCNVector3(x: 0, y: 0, z: 99), duration: 0.2))
+            SCNTransaction.begin()
+            SCNTransaction.setAnimationDuration(1)
+            jupiterNode.opacity = 0.01;
+            SCNTransaction.commit()
+        } else {
+//            jupiterNode.removeAllActions()
+//            let old = jupiterNode.rotation
+//            jupiterNode.rotation = SCNVector4(x: Float(point.x), y: Float(point.y), z: old.z, w: old.w)
+        }
+        
     }
     
     func handleTap(gestureRecognize: UIGestureRecognizer) {
@@ -105,6 +198,10 @@ class GameViewController: UIViewController {
                 SCNTransaction.commit()
             }
         }
+    }
+    
+    func moveCameraTo(node:SCNNode) {
+        
     }
     
     override func shouldAutorotate() -> Bool {
