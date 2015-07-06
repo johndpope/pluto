@@ -24,6 +24,19 @@ class JupiterNode: SCNNode {
     }
 }
 
+class SunNode: SCNNode {
+    
+    required override init() {
+        super.init()
+        geometry = SCNSphere(radius: 2)
+        geometry!.firstMaterial?.diffuse.contents = UIImage(named: "jupiter")
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
 class SaturnNode: SCNNode {
     
     required override init() {
@@ -69,7 +82,6 @@ class GameViewController: UIViewController {
         
         // place the camera
         cameraNode.position = SCNVector3(x: 0, y: 0, z: 4)
-
         
         // create and add a light to the scene
         let lightNode = SCNNode()
