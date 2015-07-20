@@ -11,12 +11,38 @@ import QuartzCore
 import SceneKit
 
 
-class JupiterNode: SCNNode {
+func ==(a:SpaceBodyNode, b:SpaceBodyNode) -> Bool {
+    return a.name == b.name
+}
 
+class SpaceBodyNode: SCNNode {
+    
+    var data:SpaceBodyData?
+    
+    var cameraDistance:Float {
+        get {
+            return data!.radius * 3.5
+        }
+    }
+    
+    var cameraLocation:SCNVector3 {
+        get {
+            return SCNVector3(x: 0, y: 0, z: data!.orbitDistance + cameraDistance)
+        }
+    }
+    
     required override init() {
         super.init()
-        geometry = SCNSphere(radius: 1)
-        geometry!.firstMaterial?.diffuse.contents = UIImage(named: "jupiter")
+    }
+    
+    convenience init(data: SpaceBodyData) {
+        self.init()
+        self.data = data
+        name = data.name
+        geometry = SCNSphere(radius: CGFloat(data.radius))
+        geometry!.firstMaterial?.diffuse.contents = UIImage(named: data.skin)
+        let zero:Float = 0
+        position = SCNVector3(x: zero, y: zero, z: data.orbitDistance)
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -24,51 +50,78 @@ class JupiterNode: SCNNode {
     }
 }
 
-class SunNode: SCNNode {
+struct SpaceBodyData {
+
+    let skin:String
+    let name:String
+    let radius:Float
+    let orbitDistance:Float
+    let orbitBody:String?
     
-    required override init() {
-        super.init()
-        geometry = SCNSphere(radius: 2)
-        geometry!.firstMaterial?.diffuse.contents = UIImage(named: "jupiter")
+    init(dict:Dictionary<String, String>){
+        
+        let distanceScale:Float = 1.0 / 10000.0 // keep numbers understandable
+        let radisuScale:Float   = 1.0 / 1000.0 // keep numbers understandable
+        
+        skin = dict["skin"]!
+        name = dict["name"]!
+        radius = (dict["radius"]! as NSString).floatValue * radisuScale
+        var tempOrbitDist:Float = 0
+        if let distString:String = dict["orbit_radius"] {
+            var floatDist = (distString as NSString).floatValue
+            
+            tempOrbitDist = floatDist * distanceScale
+        }
+        orbitDistance = tempOrbitDist
+        orbitBody = dict["orbital_body"]
     }
     
-    required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 }
 
-class SaturnNode: SCNNode {
+
+class PlanetDataSource {
     
-    required override init() {
-        super.init()
-        geometry = SCNSphere(radius: 1)
-        geometry!.firstMaterial?.diffuse.contents = UIImage(named: "saturn")
+    func planetDatas() -> [SpaceBodyData] {
+        
+        var data:[SpaceBodyData] = []
+        let csv = self.csv()
+        
+        for row in csv.rows {
+            data.append(SpaceBodyData(dict: row))
+        }
+        
+        return data
     }
     
-    required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func csv() -> CSV {
+        return CSV(contentsOfURL: csvURL(), error: nil)!
+    }
+
+    func csvURL() -> NSURL {
+        let urlString = NSBundle.mainBundle().pathForResource("planet_data", ofType: ".csv")!
+        return NSURL(fileURLWithPath: urlString)!
     }
 }
-
-
 
 class GameViewController: UIViewController {
 
     let cameraNode:SCNNode
-    let jupiterNode:JupiterNode
-    let saturnNode:SaturnNode
     let scene:SCNScene
+    let ambientLightNode:SCNNode
+    let lightNode:SCNNode
+    var bodies:[SpaceBodyNode]
     
-    var rotateAction:SCNAction?
+    var bodyIndex:Int = 0
     
     required init(coder aDecoder: NSCoder) {
         cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
-        cameraNode.camera?.focalDistance = 1
-        print(cameraNode.camera)
-        jupiterNode = JupiterNode()
-        saturnNode = SaturnNode()
+        cameraNode.camera!.zNear = 1
+        cameraNode.camera!.zFar = 590638
+        ambientLightNode = SCNNode()
+        lightNode = SCNNode()
         scene = SCNScene()
+        bodies = []
         super.init(coder:aDecoder)
     }
     
@@ -81,34 +134,14 @@ class GameViewController: UIViewController {
         scene.background.contents = ["sky_right", "sky_left", "sky_top", "sky_bottom", "sky_back", "sky_front"]
         
         // place the camera
-        cameraNode.position = SCNVector3(x: 0, y: 0, z: 4)
-        
-        // create and add a light to the scene
-        let lightNode = SCNNode()
-        lightNode.light = SCNLight()
-        lightNode.light!.type = SCNLightTypeOmni
-        lightNode.position = SCNVector3(x: 0, y: 10, z: 10)
-        scene.rootNode.addChildNode(lightNode)
+        cameraNode.position = SCNVector3(x: 0, y: 0, z: 228)
         
         // create and add an ambient light to the scene
-        let ambientLightNode = SCNNode()
         ambientLightNode.light = SCNLight()
         ambientLightNode.light!.type = SCNLightTypeAmbient
         ambientLightNode.light!.color = UIColor.darkGrayColor()
         scene.rootNode.addChildNode(ambientLightNode)
         
-        // retrieve the ship node
-        
-        scene.rootNode.addChildNode(jupiterNode)
-        scene.rootNode.addChildNode(saturnNode)
-        
-        jupiterNode.position = SCNVector3()
-        saturnNode.position = SCNVector3(x: 0, y: 0, z: 70)
-        
-        // animate the 3d object
-        rotateAction = SCNAction.repeatActionForever(SCNAction.rotateByX(0, y: 1, z: 0, duration: 10))
-        jupiterNode.runAction(rotateAction!, forKey: "rotate")
-        saturnNode.runAction(rotateAction!, forKey: "rotate")
         
         // retrieve the SCNView
         let scnView = self.view as! SCNView
@@ -117,7 +150,7 @@ class GameViewController: UIViewController {
         scnView.scene = scene
         
         // allows the user to manipulate the camera
-        scnView.allowsCameraControl = true
+        scnView.allowsCameraControl = false
         
         // show statistics such as fps and timing information
         scnView.showsStatistics = false
@@ -125,95 +158,42 @@ class GameViewController: UIViewController {
         // configure the view
         scnView.backgroundColor = UIColor.blackColor()
         
-        // add a tap gesture recognizer
-        let tapGesture = UITapGestureRecognizer(target: self, action: "handleTap:")
-        var gestureRecognizers = [AnyObject]()
-        gestureRecognizers.append(tapGesture)
-        if let existingGestureRecognizers = scnView.gestureRecognizers {
-            gestureRecognizers.extend(existingGestureRecognizers)
-        }
-        scnView.gestureRecognizers = gestureRecognizers
-
-//        let zoomPan = UIPanGestureRecognizer(target: self, action: "handlePan:")
-//        scnView.addGestureRecognizer(zoomPan)
-
+        // BEGIN!!
+        addPlanets()
+        
+        
+        moveBetweenBodies()
+        
+        let tap = UITapGestureRecognizer(target: self, action: "moveBetweenBodies")
+        view.addGestureRecognizer(tap)
     }
     
     func addLightToSceneAt(postion:SCNVector3) {
         
         let lightNode = SCNNode()
         lightNode.light = SCNLight()
-        lightNode.light!.type = SCNLightTypeOmni
+        lightNode.light!.type = SCNLightTypeAmbient
         lightNode.position = postion
         scene.rootNode.addChildNode(lightNode)
     }
     
-    func handlePan(gesture: UIPanGestureRecognizer) {
-        let point = gesture.velocityInView(view!)
-        
-        let zoomThreshold:CGFloat = 1000
-        
-        print(zoomThreshold, point.y, "\n")
-        
-        if(point.y > zoomThreshold){
-            cameraNode.runAction(SCNAction.moveTo(SCNVector3(x: 0, y: 0, z: 4), duration: 0.8))
-            //let mat = jupiterNode.geometry!.firstMaterial!
-            SCNTransaction.begin()
-            SCNTransaction.setAnimationDuration(1)
-            jupiterNode.opacity = 1;
-            SCNTransaction.commit()
-        } else if(point.y < -1 * zoomThreshold){
-            cameraNode.runAction(SCNAction.moveTo(SCNVector3(x: 0, y: 0, z: 99), duration: 0.2))
-            SCNTransaction.begin()
-            SCNTransaction.setAnimationDuration(1)
-            jupiterNode.opacity = 0.01;
-            SCNTransaction.commit()
-        } else {
-//            jupiterNode.removeAllActions()
-//            let old = jupiterNode.rotation
-//            jupiterNode.rotation = SCNVector4(x: Float(point.x), y: Float(point.y), z: old.z, w: old.w)
-        }
-        
-    }
-    
-    func handleTap(gestureRecognize: UIGestureRecognizer) {
-        // retrieve the SCNView
-        let scnView = self.view as! SCNView
-        
-        // check what nodes are tapped
-        let p = gestureRecognize.locationInView(scnView)
-        if let hitResults = scnView.hitTest(p, options: nil) {
-            // check that we clicked on at least one object
-            if hitResults.count > 0 {
-                // retrieved the first clicked object
-                let result: AnyObject! = hitResults[0]
-                
-                // get its material
-                let material = result.node!.geometry!.firstMaterial!
-                
-                // highlight it
-                SCNTransaction.begin()
-                SCNTransaction.setAnimationDuration(0.5)
-                
-                // on completion - unhighlight
-                SCNTransaction.setCompletionBlock {
-                    SCNTransaction.begin()
-                    SCNTransaction.setAnimationDuration(0.5)
-                    
-                    material.emission.contents = UIColor.blackColor()
-                    
-                    SCNTransaction.commit()
-                }
-                
-                material.emission.contents = UIColor.redColor()
-                
-                SCNTransaction.commit()
-            }
+    func addPlanets() {
+        for data in PlanetDataSource().planetDatas() {
+            let node = SpaceBodyNode(data: data)
+            node.runAction(SCNAction.repeatActionForever(SCNAction.rotateByX(0, y: 1, z: 0, duration: 10)))
+            scene.rootNode.addChildNode(node)
+            bodies.append(node)
         }
     }
     
-    func moveCameraTo(node:SCNNode) {
-        
+    func moveBetweenBodies() {
+        if bodyIndex >= bodies.count {
+            bodyIndex = 0
+        }
+        let node = bodies[bodyIndex]
+        println("\(node.name) \(node.data!.radius) \(node.position.z) \(node.cameraLocation.z)")
+        cameraNode.runAction(SCNAction.moveTo(node.cameraLocation, duration: 1))
+        bodyIndex += 1
     }
     
     override func shouldAutorotate() -> Bool {

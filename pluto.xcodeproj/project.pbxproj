@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B29D25231B5CF07F00EDE4E3 /* planet_data.csv in Resources */ = {isa = PBXBuildFile; fileRef = B29D25221B5CF07F00EDE4E3 /* planet_data.csv */; };
+		B29D25281B5D163C00EDE4E3 /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29D25271B5D163C00EDE4E3 /* CSV.swift */; };
 		B2E903EF1B47A70E00237B16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E903EE1B47A70E00237B16 /* AppDelegate.swift */; };
 		B2E903F31B47A70F00237B16 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E903F21B47A70F00237B16 /* GameViewController.swift */; };
 		B2E903F61B47A70F00237B16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2E903F41B47A70F00237B16 /* Main.storyboard */; };
@@ -26,6 +28,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01524EEDE59F01374F59370D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		29A7FDB41457E108E62D0698 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53EDCA7DD23AE22CE694F93C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B29D25221B5CF07F00EDE4E3 /* planet_data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = planet_data.csv; path = ../planet_data.csv; sourceTree = "<group>"; };
+		B29D25271B5D163C00EDE4E3 /* CSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
 		B2E903E91B47A70E00237B16 /* pluto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pluto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2E903ED1B47A70E00237B16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2E903EE1B47A70E00237B16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,12 +63,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3855531ABFF3FD1A2A6CB732 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				53EDCA7DD23AE22CE694F93C /* Pods.debug.xcconfig */,
+				01524EEDE59F01374F59370D /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		51E6D4F285006EAC58BBB0DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29A7FDB41457E108E62D0698 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B29D25241B5CF94F00EDE4E3 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				B29D25271B5D163C00EDE4E3 /* CSV.swift */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
 		B2E903E01B47A70E00237B16 = {
 			isa = PBXGroup;
 			children = (
 				B2E903EB1B47A70E00237B16 /* pluto */,
 				B2E904031B47A70F00237B16 /* plutoTests */,
 				B2E903EA1B47A70E00237B16 /* Products */,
+				3855531ABFF3FD1A2A6CB732 /* Pods */,
+				51E6D4F285006EAC58BBB0DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,12 +111,14 @@
 		B2E903EB1B47A70E00237B16 /* pluto */ = {
 			isa = PBXGroup;
 			children = (
+				B29D25241B5CF94F00EDE4E3 /* External */,
 				B2E903EE1B47A70E00237B16 /* AppDelegate.swift */,
 				B2E903F21B47A70F00237B16 /* GameViewController.swift */,
 				B2E903F41B47A70F00237B16 /* Main.storyboard */,
 				B2E903F71B47A70F00237B16 /* Images.xcassets */,
 				B2E903F91B47A70F00237B16 /* LaunchScreen.xib */,
 				B2E903EC1B47A70E00237B16 /* Supporting Files */,
+				BB2ED83592790134AAB83D8F /* data */,
 			);
 			path = pluto;
 			sourceTree = "<group>";
@@ -110,6 +146,14 @@
 				B2E904051B47A70F00237B16 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BB2ED83592790134AAB83D8F /* data */ = {
+			isa = PBXGroup;
+			children = (
+				B29D25221B5CF07F00EDE4E3 /* planet_data.csv */,
+			);
+			path = data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +240,7 @@
 			files = (
 				B2E903FB1B47A70F00237B16 /* LaunchScreen.xib in Resources */,
 				B2E903F81B47A70F00237B16 /* Images.xcassets in Resources */,
+				B29D25231B5CF07F00EDE4E3 /* planet_data.csv in Resources */,
 				B2E903F61B47A70F00237B16 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,6 +261,7 @@
 			files = (
 				B2E903F31B47A70F00237B16 /* GameViewController.swift in Sources */,
 				B2E903EF1B47A70E00237B16 /* AppDelegate.swift in Sources */,
+				B29D25281B5D163C00EDE4E3 /* CSV.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
