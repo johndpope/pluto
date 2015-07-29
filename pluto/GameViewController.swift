@@ -61,11 +61,18 @@ struct SpaceBodyData {
     init(dict:Dictionary<String, String>){
         
         let distanceScale:Float = 1.0 / 10000.0 // keep numbers understandable
-        let radisuScale:Float   = 1.0 / 1000.0 // keep numbers understandable
+        var radisuScale:Float   = 1.0 / 1000.0 // keep numbers understandable
         
         skin = dict["skin"]!
         name = dict["name"]!
+        
+        // pluto gets a size multiplier to avoid jittering, sorry science
+        if name == "Pluto" {
+            radisuScale = 20 * radisuScale
+        }
+        
         radius = (dict["radius"]! as NSString).floatValue * radisuScale
+        
         var tempOrbitDist:Float = 0
         if let distString:String = dict["orbit_radius"] {
             var floatDist = (distString as NSString).floatValue
@@ -78,13 +85,100 @@ struct SpaceBodyData {
     
 }
 
+class GameInterfaceView : UIView {
+    
+    let forwardButton : UIImageView
+    let backButton : UIImageView
+    let buttonSize: CGSize
+    
+    override init(frame: CGRect) {
+        
+        let forwardImage = UIImage(named: "right_arrow")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        let backImage = UIImage(named: "left_arrow")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+
+        buttonSize = forwardImage!.size
+        
+        forwardButton = UIImageView(image: forwardImage)
+        forwardButton.tintColor = UIColor.whiteColor()
+
+        backButton = UIImageView(image: backImage)
+        backButton.tintColor = UIColor.whiteColor()
+
+        
+        super.init(frame: frame)
+        
+        addSubview(forwardButton)
+        addSubview(backButton)
+    
+    }
+    
+    
+    override func layoutSubviews() {
+    
+        let margin:CGFloat = 10.0
+        let y = frame.size.height - buttonSize.height - margin
+        let backX:CGFloat = 10.0
+        let forwardX = frame.size.width - buttonSize.width - margin
+        
+        let backOrigin = CGPoint(x: backX, y: y)
+        let forwardOrigin = CGPoint(x: forwardX, y: y)
+
+        backButton.frame = CGRect(origin: backOrigin, size: buttonSize)
+        forwardButton.frame = CGRect(origin: forwardOrigin, size: buttonSize)
+        
+        super.layoutSubviews()
+    }
+    
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+
+class SkyNode:SCNNode {
+    
+    override init() {
+        super.init()
+        
+        geometry = SCNSphere(radius: 1000000.0)
+
+        let material = SCNMaterial()
+        material.diffuse.contents = UIImage(named: "sky.jpg")
+        material.doubleSided = true
+//        material.specular.contents = UIColor.whiteColor()
+//        material.shininess = 1.0
+        geometry!.materials = [material]
+
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
 
 class PlanetDataSource {
     
-    func planetDatas() -> [SpaceBodyData] {
+    let spaceNodes:[SpaceBodyNode]
+    
+    init(){
+        spaceNodes = PlanetDataSource.makeSpaceNodes()
+    }
+    
+    static func makeSpaceNodes() -> [SpaceBodyNode] {
+        var nodes:[SpaceBodyNode] = []
+        for data in PlanetDataSource.planetDatas() {
+            let node = SpaceBodyNode(data: data)
+//            node.runAction(SCNAction.repeatActionForever(SCNAction.rotateByX(0, y: 1, z: 0, duration: 10)))
+            nodes.append(node)
+        }
+        return nodes
+    }
+    
+    static func planetDatas() -> [SpaceBodyData] {
         
         var data:[SpaceBodyData] = []
-        let csv = self.csv()
+        let csv = PlanetDataSource.csv()
         
         for row in csv.rows {
             data.append(SpaceBodyData(dict: row))
@@ -93,19 +187,71 @@ class PlanetDataSource {
         return data
     }
     
-    func csv() -> CSV {
+    static func csv() -> CSV {
         return CSV(contentsOfURL: csvURL(), error: nil)!
     }
 
-    func csvURL() -> NSURL {
+    static func csvURL() -> NSURL {
         let urlString = NSBundle.mainBundle().pathForResource("planet_data", ofType: ".csv")!
         return NSURL(fileURLWithPath: urlString)!
     }
 }
 
-class GameViewController: UIViewController {
+
+class Hubble : SCNNode {
 
     let cameraNode:SCNNode
+    
+    override init() {
+        cameraNode = SCNNode()
+        cameraNode.camera = SCNCamera()
+        cameraNode.camera!.zNear = 0.1
+        cameraNode.camera!.zFar = 5000000 // 5,000,000
+        super.init()
+        
+        
+        addChildNode(cameraNode)
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func orbit(node:SpaceBodyNode) {
+        
+        removeAllActions()
+        
+        let pos = node.position
+        let zoom = SCNAction.moveTo(pos, duration: 1)
+        cameraNode.position = SCNVector3(x: 0, y: 0, z: node.cameraDistance)
+
+        let look = SCNLookAtConstraint(target: node)
+        cameraNode.constraints = [look]
+        runAction(zoom, completionHandler: {
+            println("\(node.name) \(node.data!.radius) \(node.position.z) \(self.position.z) \(self.cameraNode.position.z)")
+            self.runAction(SCNAction.repeatActionForever(SCNAction.rotateByX(1, y: 0, z: 0, duration: 5)))
+        })
+    }
+}
+
+class IntervalLogger {
+    
+    static let interval = 0.2
+    
+    static func log(block:() -> String){
+        print(block())
+        let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(interval * Double(NSEC_PER_SEC)))
+        dispatch_after(delay, dispatch_get_main_queue()) {
+            self.log(block)
+        }
+    }
+}
+
+
+
+class GameViewController: UIViewController {
+
+    let cameraNode:Hubble
     let scene:SCNScene
     let ambientLightNode:SCNNode
     let lightNode:SCNNode
@@ -114,10 +260,7 @@ class GameViewController: UIViewController {
     var bodyIndex:Int = 0
     
     required init(coder aDecoder: NSCoder) {
-        cameraNode = SCNNode()
-        cameraNode.camera = SCNCamera()
-        cameraNode.camera!.zNear = 1
-        cameraNode.camera!.zFar = 590638
+        cameraNode = Hubble()
         ambientLightNode = SCNNode()
         lightNode = SCNNode()
         scene = SCNScene()
@@ -130,17 +273,18 @@ class GameViewController: UIViewController {
         
         // add a camera to the scene
         scene.rootNode.addChildNode(cameraNode)
-        //  Right, Left, Top, Bottom, Back, Front.
-        scene.background.contents = ["sky_right", "sky_left", "sky_top", "sky_bottom", "sky_back", "sky_front"]
+
+        scene.rootNode.addChildNode(SkyNode())
         
         // place the camera
-        cameraNode.position = SCNVector3(x: 0, y: 0, z: 228)
+        cameraNode.position = SCNVector3(x: 0, y: 0, z: 0)
         
         // create and add an ambient light to the scene
         ambientLightNode.light = SCNLight()
         ambientLightNode.light!.type = SCNLightTypeAmbient
         ambientLightNode.light!.color = UIColor.darkGrayColor()
         scene.rootNode.addChildNode(ambientLightNode)
+        
         
         
         // retrieve the SCNView
@@ -161,12 +305,15 @@ class GameViewController: UIViewController {
         // BEGIN!!
         addPlanets()
         
-        
         moveBetweenBodies()
         
         let tap = UITapGestureRecognizer(target: self, action: "moveBetweenBodies")
         view.addGestureRecognizer(tap)
+        
+        view.addSubview(GameInterfaceView(frame: view.frame))
+        
     }
+    
     
     func addLightToSceneAt(postion:SCNVector3) {
         
@@ -178,11 +325,10 @@ class GameViewController: UIViewController {
     }
     
     func addPlanets() {
-        for data in PlanetDataSource().planetDatas() {
-            let node = SpaceBodyNode(data: data)
-            node.runAction(SCNAction.repeatActionForever(SCNAction.rotateByX(0, y: 1, z: 0, duration: 10)))
-            scene.rootNode.addChildNode(node)
-            bodies.append(node)
+        for planet in PlanetDataSource().spaceNodes {
+            bodies.append(planet)
+            scene.rootNode.addChildNode(planet)
+            addLightToSceneAt(planet.position)
         }
     }
     
@@ -191,8 +337,7 @@ class GameViewController: UIViewController {
             bodyIndex = 0
         }
         let node = bodies[bodyIndex]
-        println("\(node.name) \(node.data!.radius) \(node.position.z) \(node.cameraLocation.z)")
-        cameraNode.runAction(SCNAction.moveTo(node.cameraLocation, duration: 1))
+        cameraNode.orbit(node)
         bodyIndex += 1
     }
     

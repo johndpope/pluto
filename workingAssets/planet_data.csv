@@ -1,0 +1,12 @@
+name,skin,radius,diameter,orbital_body,orbit_radius
+Sun,yellow_sun,695800,1391600,,0
+Mercury,jupiter,2440,4879,Sun,57909227
+Venus,jupiter,6052,12104,Sun,108209475
+Earth,jupiter,6371,12742,Sun,149598262
+Moon,jupiter,1737,3475,Earth,227943824
+Mars,jupiter,3390,6779,Sun,192000
+Jupiter,jupiter,69911,139822,Sun,778340821
+Saturn,saturn,58232,116464,Sun,1426666422
+Uranus,jupiter,25362,50724,Sun,2870658186
+Neptune,jupiter,24622,49244,Sun,4498396441
+Pluto,jupiter,1185,2370,Sun,5906380000
