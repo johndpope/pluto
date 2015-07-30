@@ -21,13 +21,20 @@ class SpaceBodyNode: SCNNode {
     
     var cameraDistance:Float {
         get {
-            return data!.radius * 3.5
+            return data!.radius * 6
         }
     }
     
     var cameraLocation:SCNVector3 {
         get {
             return SCNVector3(x: 0, y: 0, z: data!.orbitDistance + cameraDistance)
+        }
+    }
+    
+    var rotationSpeed:CGFloat {
+        get {
+            let factor:Float = name == "Pluto" ? 400 : 20
+            return CGFloat(factor / data!.radius)
         }
     }
     
@@ -169,7 +176,7 @@ class PlanetDataSource {
         var nodes:[SpaceBodyNode] = []
         for data in PlanetDataSource.planetDatas() {
             let node = SpaceBodyNode(data: data)
-//            node.runAction(SCNAction.repeatActionForever(SCNAction.rotateByX(0, y: 1, z: 0, duration: 10)))
+            node.runAction(SCNAction.repeatActionForever(SCNAction.rotateByX(0, y: -node.rotationSpeed, z: 0, duration: 10)))
             nodes.append(node)
         }
         return nodes
@@ -218,18 +225,37 @@ class Hubble : SCNNode {
     }
     
     func orbit(node:SpaceBodyNode) {
-        
+
         removeAllActions()
         
-        let pos = node.position
-        let zoom = SCNAction.moveTo(pos, duration: 1)
-        cameraNode.position = SCNVector3(x: 0, y: 0, z: node.cameraDistance)
-
         let look = SCNLookAtConstraint(target: node)
         cameraNode.constraints = [look]
+        cameraNode.position = SCNVector3(x: 0, y: 0, z: node.cameraDistance)
+        
+        let pos = node.position
+        
+        let zoom = SCNAction.group([
+                SCNAction.moveTo(pos, duration: 1.5),
+                SCNAction.rotateToX(-0.25, y: 0, z: 0, duration: 1.5)
+            ])
+        
+        zoom.timingMode = .EaseInEaseOut;
+        
+        let lat = SCNAction.repeatActionForever(SCNAction.sequence([
+                SCNAction.rotateByX(0.5, y: 0, z: 0, duration: 7),
+                SCNAction.rotateByX(-0.5, y: 0, z: 0, duration: 7),
+            ]))
+        
+        lat.timingMode = .EaseInEaseOut
+        
+        let lon = SCNAction.repeatActionForever(SCNAction.rotateByX(0, y: 1, z: 0, duration: 5))
+    
+        let orbit = SCNAction.group([lat, lon])
+        
         runAction(zoom, completionHandler: {
             println("\(node.name) \(node.data!.radius) \(node.position.z) \(self.position.z) \(self.cameraNode.position.z)")
-            self.runAction(SCNAction.repeatActionForever(SCNAction.rotateByX(1, y: 0, z: 0, duration: 5)))
+
+            self.runAction(orbit)
         })
     }
 }
