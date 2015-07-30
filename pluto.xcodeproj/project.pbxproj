@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B29D25231B5CF07F00EDE4E3 /* planet_data.csv in Resources */ = {isa = PBXBuildFile; fileRef = B29D25221B5CF07F00EDE4E3 /* planet_data.csv */; };
-		B29D25281B5D163C00EDE4E3 /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29D25271B5D163C00EDE4E3 /* CSV.swift */; };
-		B2E903EF1B47A70E00237B16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E903EE1B47A70E00237B16 /* AppDelegate.swift */; };
-		B2E903F31B47A70F00237B16 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E903F21B47A70F00237B16 /* GameViewController.swift */; };
-		B2E903F61B47A70F00237B16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2E903F41B47A70F00237B16 /* Main.storyboard */; };
-		B2E903F81B47A70F00237B16 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2E903F71B47A70F00237B16 /* Images.xcassets */; };
-		B2E903FB1B47A70F00237B16 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2E903F91B47A70F00237B16 /* LaunchScreen.xib */; };
 		B2E904071B47A70F00237B16 /* plutoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E904061B47A70F00237B16 /* plutoTests.swift */; };
+		BB2ED229A1A6A7F3691AB9EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2EDE0DF88BA9FA79579741 /* AppDelegate.swift */; };
+		BB2ED4C7FFB61C60EF9701DA /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2ED8442BABAA6612E05558 /* Utility.swift */; };
+		BB2ED52950C28B623D24B6D8 /* planet_data.csv in Resources */ = {isa = PBXBuildFile; fileRef = BB2EDEBEB831DE6924EE1F8C /* planet_data.csv */; };
+		BB2ED5E1D3A17476EE790422 /* Hubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2ED1ABFACF852E08F2D68A /* Hubble.swift */; };
+		BB2ED5E9A780F00475AECF67 /* SpaceBodyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2EDAA90094A7DE5025D9B6 /* SpaceBodyData.swift */; };
+		BB2ED6F70CAA0843B735854C /* SpaceBodyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2ED7266A3031B5C1D45EB3 /* SpaceBodyNode.swift */; };
+		BB2ED707863D838AD93133F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB2EDC5F8B2FF91E88BD1000 /* Main.storyboard */; };
+		BB2ED8E59F76A063CA97719D /* PlanetDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2ED20BC2971B302DD8F01F /* PlanetDataSource.swift */; };
+		BB2ED9F63D6D1606D77031AB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB2EDE4D1BC0DB60E531264A /* LaunchScreen.xib */; };
+		BB2EDA1F7A4F98C39A4D1033 /* SkyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2ED25BD4F5A71F0F2C5FB5 /* SkyNode.swift */; };
+		BB2EDBB0A2C5E77680FC5699 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB2ED774FB031FCBC476EB4B /* Images.xcassets */; };
+		BB2EDC1D020CF601A09A5294 /* GameInterfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2EDE1C90367AD35AAA97C1 /* GameInterfaceView.swift */; };
+		BB2EDC537434C9DD10E1144B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2ED6785ED695EBB5E4CA48 /* GameViewController.swift */; };
+		BB2EDEC907EE7B6E14EB5E5F /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2ED6D1B74EC40052D2812C /* CSV.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,21 +35,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01524EEDE59F01374F59370D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		29A7FDB41457E108E62D0698 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		53EDCA7DD23AE22CE694F93C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		B29D25221B5CF07F00EDE4E3 /* planet_data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = planet_data.csv; path = ../planet_data.csv; sourceTree = "<group>"; };
-		B29D25271B5D163C00EDE4E3 /* CSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
 		B2E903E91B47A70E00237B16 /* pluto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pluto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2E903ED1B47A70E00237B16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B2E903EE1B47A70E00237B16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B2E903F21B47A70F00237B16 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		B2E903F51B47A70F00237B16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B2E903F71B47A70F00237B16 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		B2E903FA1B47A70F00237B16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B2E904001B47A70F00237B16 /* plutoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = plutoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2E904051B47A70F00237B16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2E904061B47A70F00237B16 /* plutoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plutoTests.swift; sourceTree = "<group>"; };
+		BB2ED1ABFACF852E08F2D68A /* Hubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hubble.swift; sourceTree = "<group>"; };
+		BB2ED20BC2971B302DD8F01F /* PlanetDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetDataSource.swift; sourceTree = "<group>"; };
+		BB2ED25BD4F5A71F0F2C5FB5 /* SkyNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyNode.swift; sourceTree = "<group>"; };
+		BB2ED6785ED695EBB5E4CA48 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		BB2ED6D1B74EC40052D2812C /* CSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
+		BB2ED7266A3031B5C1D45EB3 /* SpaceBodyNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceBodyNode.swift; sourceTree = "<group>"; };
+		BB2ED774FB031FCBC476EB4B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BB2ED8442BABAA6612E05558 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		BB2EDAA90094A7DE5025D9B6 /* SpaceBodyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceBodyData.swift; sourceTree = "<group>"; };
+		BB2EDB39FCAB7011C8FEB855 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = pluto/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		BB2EDDE89E1C3988930D245C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = pluto/Base.lproj/LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
+		BB2EDE0DF88BA9FA79579741 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BB2EDE1C90367AD35AAA97C1 /* GameInterfaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameInterfaceView.swift; sourceTree = "<group>"; };
+		BB2EDEBEB831DE6924EE1F8C /* planet_data.csv */ = {isa = PBXFileReference; lastKnownFileType = file.csv; path = planet_data.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,39 +74,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3855531ABFF3FD1A2A6CB732 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				53EDCA7DD23AE22CE694F93C /* Pods.debug.xcconfig */,
-				01524EEDE59F01374F59370D /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		51E6D4F285006EAC58BBB0DE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				29A7FDB41457E108E62D0698 /* Pods.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B29D25241B5CF94F00EDE4E3 /* External */ = {
-			isa = PBXGroup;
-			children = (
-				B29D25271B5D163C00EDE4E3 /* CSV.swift */,
-			);
-			name = External;
-			sourceTree = "<group>";
-		};
 		B2E903E01B47A70E00237B16 = {
 			isa = PBXGroup;
 			children = (
 				B2E903EB1B47A70E00237B16 /* pluto */,
 				B2E904031B47A70F00237B16 /* plutoTests */,
 				B2E903EA1B47A70E00237B16 /* Products */,
-				3855531ABFF3FD1A2A6CB732 /* Pods */,
-				51E6D4F285006EAC58BBB0DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,14 +95,10 @@
 		B2E903EB1B47A70E00237B16 /* pluto */ = {
 			isa = PBXGroup;
 			children = (
-				B29D25241B5CF94F00EDE4E3 /* External */,
-				B2E903EE1B47A70E00237B16 /* AppDelegate.swift */,
-				B2E903F21B47A70F00237B16 /* GameViewController.swift */,
-				B2E903F41B47A70F00237B16 /* Main.storyboard */,
-				B2E903F71B47A70F00237B16 /* Images.xcassets */,
-				B2E903F91B47A70F00237B16 /* LaunchScreen.xib */,
 				B2E903EC1B47A70E00237B16 /* Supporting Files */,
-				BB2ED83592790134AAB83D8F /* data */,
+				BB2EDD04B734E32CA09D26AA /* Source */,
+				BB2ED40D30BD24139DA85931 /* Assets */,
+				BB2EDBDEC5016735AD60F05D /* External */,
 			);
 			path = pluto;
 			sourceTree = "<group>";
@@ -148,12 +128,95 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BB2ED83592790134AAB83D8F /* data */ = {
+		BB2ED266F6584D751C8A074B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B29D25221B5CF07F00EDE4E3 /* planet_data.csv */,
+				BB2EDAA90094A7DE5025D9B6 /* SpaceBodyData.swift */,
+				BB2ED20BC2971B302DD8F01F /* PlanetDataSource.swift */,
 			);
-			path = data;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BB2ED40D30BD24139DA85931 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				BB2ED774FB031FCBC476EB4B /* Images.xcassets */,
+				BB2EDE4D1BC0DB60E531264A /* LaunchScreen.xib */,
+				BB2EDC5F8B2FF91E88BD1000 /* Main.storyboard */,
+				BB2EDB0B14DE0C49D14E99F2 /* Data */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		BB2ED457ABE4DF2CFCD14C6F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BB2ED6785ED695EBB5E4CA48 /* GameViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BB2ED531ACCAD40F4B982F02 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB2EDE1C90367AD35AAA97C1 /* GameInterfaceView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BB2ED89BF3A6B4B5B3D1AF27 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				BB2ED8442BABAA6612E05558 /* Utility.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		BB2ED89E269A6DA79655411A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BB2EDE0DF88BA9FA79579741 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		BB2EDB0B14DE0C49D14E99F2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BB2EDEBEB831DE6924EE1F8C /* planet_data.csv */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		BB2EDBDEC5016735AD60F05D /* External */ = {
+			isa = PBXGroup;
+			children = (
+				BB2ED6D1B74EC40052D2812C /* CSV.swift */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		BB2EDD04B734E32CA09D26AA /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				BB2ED457ABE4DF2CFCD14C6F /* ViewControllers */,
+				BB2ED89E269A6DA79655411A /* App */,
+				BB2EDE395AA48A46F169279D /* Nodes */,
+				BB2ED89BF3A6B4B5B3D1AF27 /* Utility */,
+				BB2ED266F6584D751C8A074B /* Models */,
+				BB2ED531ACCAD40F4B982F02 /* Views */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		BB2EDE395AA48A46F169279D /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				BB2ED1ABFACF852E08F2D68A /* Hubble.swift */,
+				BB2ED7266A3031B5C1D45EB3 /* SpaceBodyNode.swift */,
+				BB2ED25BD4F5A71F0F2C5FB5 /* SkyNode.swift */,
+			);
+			path = Nodes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,10 +301,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2E903FB1B47A70F00237B16 /* LaunchScreen.xib in Resources */,
-				B2E903F81B47A70F00237B16 /* Images.xcassets in Resources */,
-				B29D25231B5CF07F00EDE4E3 /* planet_data.csv in Resources */,
-				B2E903F61B47A70F00237B16 /* Main.storyboard in Resources */,
+				BB2EDBB0A2C5E77680FC5699 /* Images.xcassets in Resources */,
+				BB2ED9F63D6D1606D77031AB /* LaunchScreen.xib in Resources */,
+				BB2ED707863D838AD93133F8 /* Main.storyboard in Resources */,
+				BB2ED52950C28B623D24B6D8 /* planet_data.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,9 +322,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2E903F31B47A70F00237B16 /* GameViewController.swift in Sources */,
-				B2E903EF1B47A70E00237B16 /* AppDelegate.swift in Sources */,
-				B29D25281B5D163C00EDE4E3 /* CSV.swift in Sources */,
+				BB2EDC537434C9DD10E1144B /* GameViewController.swift in Sources */,
+				BB2ED229A1A6A7F3691AB9EA /* AppDelegate.swift in Sources */,
+				BB2ED5E1D3A17476EE790422 /* Hubble.swift in Sources */,
+				BB2ED4C7FFB61C60EF9701DA /* Utility.swift in Sources */,
+				BB2EDEC907EE7B6E14EB5E5F /* CSV.swift in Sources */,
+				BB2ED5E9A780F00475AECF67 /* SpaceBodyData.swift in Sources */,
+				BB2ED6F70CAA0843B735854C /* SpaceBodyNode.swift in Sources */,
+				BB2EDC1D020CF601A09A5294 /* GameInterfaceView.swift in Sources */,
+				BB2EDA1F7A4F98C39A4D1033 /* SkyNode.swift in Sources */,
+				BB2ED8E59F76A063CA97719D /* PlanetDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,18 +354,18 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B2E903F41B47A70F00237B16 /* Main.storyboard */ = {
+		BB2EDC5F8B2FF91E88BD1000 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B2E903F51B47A70F00237B16 /* Base */,
+				BB2EDB39FCAB7011C8FEB855 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		B2E903F91B47A70F00237B16 /* LaunchScreen.xib */ = {
+		BB2EDE4D1BC0DB60E531264A /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B2E903FA1B47A70F00237B16 /* Base */,
+				BB2EDDE89E1C3988930D245C /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -396,7 +466,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_WHOLE_MODULE_OPTIMIZATION = YES;
+				SWIFT_WHOLE_MODULE_OPTIMIZATION = NO;
 			};
 			name = Debug;
 		};
@@ -410,7 +480,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_WHOLE_MODULE_OPTIMIZATION = YES;
+				SWIFT_WHOLE_MODULE_OPTIMIZATION = NO;
 			};
 			name = Release;
 		};

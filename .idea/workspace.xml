@@ -1,7 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a8a92fe-8339-4f97-951e-bbea1ba3eac9" name="Default" comment="" />
+    <list default="true" id="6a8a92fe-8339-4f97-951e-bbea1ba3eac9" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/AppDelegate.swift" afterPath="$PROJECT_DIR$/pluto/Source/App/AppDelegate.swift" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/CSV.swift" afterPath="$PROJECT_DIR$/pluto/External/CSV.swift" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/GameViewController.swift" afterPath="$PROJECT_DIR$/pluto/Source/ViewControllers/GameViewController.swift" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/AppIcon.appiconset/Contents.json" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/AppIcon.appiconset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Earth/earth.imageset/Contents.json" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Earth/earth.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Earth/earth.imageset/texture_earth_clouds.jpg" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Earth/earth.imageset/texture_earth_clouds.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Interface/left_arrow.imageset/Contents.json" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Interface/left_arrow.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Interface/left_arrow.imageset/Left-50.png" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Interface/left_arrow.imageset/Left-50.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Interface/right_arrow.imageset/Contents.json" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Interface/right_arrow.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Interface/right_arrow.imageset/Right-50.png" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Interface/right_arrow.imageset/Right-50.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Jupiter/jupiter.imageset/Contents.json" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Jupiter/jupiter.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Jupiter/jupiter.imageset/jupiter.jpg" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Jupiter/jupiter.imageset/jupiter.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Mars/mars.imageset/Contents.json" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Mars/mars.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Mars/mars.imageset/texture_mars.jpg" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Mars/mars.imageset/texture_mars.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Mercury/mercury.imageset/Contents.json" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Mercury/mercury.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Mercury/mercury.imageset/mercury_small.jpg" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Mercury/mercury.imageset/mercury_small.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Neptune/neptune.imageset/Contents.json" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Neptune/neptune.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Neptune/neptune.imageset/texture_neptune.jpg" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Neptune/neptune.imageset/texture_neptune.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Pluto/pluto.imageset/Contents.json" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Pluto/pluto.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Pluto/pluto.imageset/pluto.jpg" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Pluto/pluto.imageset/pluto.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Saturn/saturn.imageset/Contents.json" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Saturn/saturn.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Saturn/saturn.imageset/texture_saturn.jpg" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Saturn/saturn.imageset/texture_saturn.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Saturn/saturn_ring.imageset/Contents.json" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Saturn/saturn_ring.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Saturn/saturn_ring.imageset/texture_saturn_ring.png" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Saturn/saturn_ring.imageset/texture_saturn_ring.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Sky/sky.imageset/Contents.json" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Sky/sky.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Sky/sky.imageset/sky.jpg" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Sky/sky.imageset/sky.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Sun/yellow_sun.imageset/Contents.json" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Sun/yellow_sun.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Sun/yellow_sun.imageset/sun.jpg" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Sun/yellow_sun.imageset/sun.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Uranus/uranus.imageset/Contents.json" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Uranus/uranus.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Uranus/uranus.imageset/texture_uranus.jpg" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Uranus/uranus.imageset/texture_uranus.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Uranus/uranus_ring.imageset/Contents.json" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Uranus/uranus_ring.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Uranus/uranus_ring.imageset/texture_uranus_ring.png" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Uranus/uranus_ring.imageset/texture_uranus_ring.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Venus/venus.imageset/Contents.json" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Venus/venus.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/Images.xcassets/Venus/venus.imageset/texture_venus_surface.jpg" afterPath="$PROJECT_DIR$/pluto/Assets/Images.xcassets/Venus/venus.imageset/texture_venus_surface.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pluto/planet_data.csv" afterPath="$PROJECT_DIR$/pluto/Assets/Data/planet_data.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/pluto.iml" afterPath="$PROJECT_DIR$/.idea/pluto.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pluto.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/pluto.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/xcode.xml" afterPath="$PROJECT_DIR$/.idea/xcode.xml" />
+    </list>
     <ignored path="pluto.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,17 +58,87 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_36191d8c2ca89237819cad7b74ffc5ad7a0d11b5" />
   <component name="FavoritesManager">
     <favorites_list name="pluto" />
   </component>
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="GameViewController.swift" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pluto/GameViewController.swift">
+        <entry file="file://$PROJECT_DIR$/pluto/Source/ViewControllers/GameViewController.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2788104" vertical-offset="735" max-vertical-offset="3390">
-              <caret line="69" column="57" selection-start-line="69" selection-start-column="57" selection-end-line="69" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.35873607" vertical-offset="319" max-vertical-offset="1950">
+              <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlanetDataSource.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pluto/Source/Models/PlanetDataSource.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="780">
+              <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SkyNode.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pluto/Source/Nodes/SkyNode.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+              <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameInterfaceView.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pluto/Source/Views/GameInterfaceView.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="915">
+              <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpaceBodyNode.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pluto/Source/Nodes/SpaceBodyNode.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpaceBodyData.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pluto/Source/Models/SpaceBodyData.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
+              <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Utility.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pluto/Source/Utility/Utility.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Hubble.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pluto/Source/Nodes/Hubble.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -43,6 +153,19 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/pluto/GameViewController.swift" />
+        <option value="$PROJECT_DIR$/pluto/Classes/Util.swift" />
+        <option value="$PROJECT_DIR$/pluto/Classes/Nodes/Hubble.swift" />
+        <option value="$PROJECT_DIR$/pluto/Classes/ViewControllers/GameViewController.swift" />
+        <option value="$PROJECT_DIR$/pluto/Source/Utility/Utility.swift" />
+        <option value="$PROJECT_DIR$/pluto/Source/SpaceBodyData.swift" />
+        <option value="$PROJECT_DIR$/pluto/GameInterfaceView.swift" />
+        <option value="$PROJECT_DIR$/pluto/Source/Views/GameInterfaceView.swift" />
+        <option value="$PROJECT_DIR$/pluto/Source/Nodes/SpaceBodyNode.swift" />
+        <option value="$PROJECT_DIR$/pluto/Source/Nodes/Hubble.swift" />
+        <option value="$PROJECT_DIR$/pluto/Source/Nodes/SkyNode.swift" />
+        <option value="$PROJECT_DIR$/pluto/Source/Models/SpaceBodyData.swift" />
+        <option value="$PROJECT_DIR$/pluto/Source/Models/PlanetDataSource.swift" />
+        <option value="$PROJECT_DIR$/pluto/Source/ViewControllers/GameViewController.swift" />
       </list>
     </option>
   </component>
@@ -78,7 +201,192 @@
     </navigator>
     <panes>
       <pane id="ProjectPane">
-        <subPane />
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pluto" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Products" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pluto" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pluto" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pluto" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pluto" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pluto" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Source" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Views" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pluto" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pluto" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Source" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ViewControllers" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pluto" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pluto" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Source" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Utility" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pluto" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pluto" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Source" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Nodes" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pluto" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pluto" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Source" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Models" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pluto" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pluto" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Source" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pluto" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pluto" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
       <pane id="Cidr.FilesView" />
     </panes>
@@ -89,7 +397,7 @@
     <property name="OBJC.PRESERVED_TARGET_SELECTION" value="pluto" />
     <property name="FullScreen" value="false" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.pluto">
     <configuration default="true" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="pluto" TARGET_NAME="pluto" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="pluto" RUN_TARGET_NAME="pluto" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
       <envs />
       <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
@@ -114,7 +422,16 @@
       <envs />
       <method />
     </configuration>
-    <list size="0" />
+    <configuration default="false" name="pluto" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="pluto" TARGET_NAME="pluto" CONFIG_NAME="Debug" SCHEME_NAME="pluto" RUN_TARGET_PROJECT_NAME="pluto" RUN_TARGET_NAME="pluto" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Application.pluto" />
+    </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -140,19 +457,19 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39980546" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32971016" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -176,7 +493,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pluto/GameViewController.swift">
+    <entry file="file://$PROJECT_DIR$/pluto/Source/ViewControllers/GameViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -184,7 +501,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pluto/GameViewController.swift">
+    <entry file="file://$PROJECT_DIR$/pluto/Source/ViewControllers/GameViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -192,7 +509,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pluto/GameViewController.swift">
+    <entry file="file://$PROJECT_DIR$/pluto/Source/ViewControllers/GameViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -200,10 +517,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pluto/GameViewController.swift">
+    <entry file="file://$PROJECT_DIR$/pluto/Source/ViewControllers/GameViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2788104" vertical-offset="735" max-vertical-offset="3390">
-          <caret line="69" column="57" selection-start-line="69" selection-start-column="57" selection-end-line="69" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pluto/Source/ViewControllers/GameViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="appcode.project-settings://c25751a">
+      <provider selected="true" editor-type-id="AppCode.ProjectSettings">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pluto/External/CSV.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16728625" vertical-offset="0" max-vertical-offset="1275">
+          <caret line="12" column="54" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pluto/Source/Nodes/Hubble.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pluto/Source/Utility/Utility.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pluto/Source/Models/SpaceBodyData.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
+          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pluto/Source/Nodes/SpaceBodyNode.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="915">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pluto/Source/Views/GameInterfaceView.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="915">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pluto/Source/Nodes/SkyNode.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pluto/Source/Models/PlanetDataSource.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="780">
+          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pluto/Source/ViewControllers/GameViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35873607" vertical-offset="319" max-vertical-offset="1950">
+          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
           <folding />
         </state>
       </provider>
